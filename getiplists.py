@@ -13,12 +13,8 @@ soup = BeautifulSoup(response.data, features="html.parser").prettify()
 
 soup = soup.split("\n")
 
-for i, line in enumerate(soup):
-	if len(line) == 0 or line[0] == "#":
-		continue
-	slashLoc = line.find("/")
-	if slashLoc != -1:
-		firstIP = line[:slashLoc]
-	else:
-		firstIP = line
-	print("{0} | firstIP = {1}, lastIP = {2}".format(line, firstIP, IPNetwork(line)[-1]))
+with open("iplist.txt", "w+") as outFile:
+	for line in soup:
+		if len(line) == 0 or line[0] == "#":
+		 	continue
+		outFile.write("{0}\n".format(line))
