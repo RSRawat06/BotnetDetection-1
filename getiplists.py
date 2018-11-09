@@ -16,5 +16,9 @@ soup = soup.split("\n")
 for i, line in enumerate(soup):
 	if len(line) == 0 or line[0] == "#":
 		continue
-	print("firstIP = {0}, lastIP = {1}", line[:line.find("/")])
-
+	slashLoc = line.find("/")
+	if slashLoc != -1:
+		firstIP = line[:slashLoc]
+	else:
+		firstIP = line
+	print("{0} | firstIP = {1}, lastIP = {2}".format(line, firstIP, IPNetwork(line)[-1]))
