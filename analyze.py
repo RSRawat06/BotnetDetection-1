@@ -1,7 +1,6 @@
 import time
-import json
-
 from elasticsearch import Elasticsearch
+import json
 
 es = Elasticsearch([{'host': 'bulika.eecs.utk.edu', 'port': 9200}])
 for i in es.indices.get("argus-live-*"):
