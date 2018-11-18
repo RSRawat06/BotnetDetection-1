@@ -15,6 +15,6 @@ soup = soup.split("\n")
 
 with open("iplist.txt", "w+") as outFile:
 	for line in soup:
-		if len(line) == 0 or line[0] == "#":
+		if len(line) == 0 or line[0] == "#" or line[0] == '0':
 		 	continue
 		outFile.write("{0}\n".format(line))
