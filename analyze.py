@@ -68,9 +68,9 @@ class IPFinder:
                         if ip[3] >= firstip[3] and ip[3] <= lastip[3]:
                             if direction == 'd':
                                 print("%s connecting with malicious IP %s" % (ip, connectionip))
-                                print()
+                                #print()
                             else:
-                                print("malicious IP %s connecting with %s" % (ip, connectionip))                    
+                                #print("malicious IP %s connecting with %s" % (ip, connectionip))                    
                                 print()
                             #print("{0} detected as a malicious IP".format(ip)
             if firstip[0] > ip[0]:
