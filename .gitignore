@@ -3,3 +3,4 @@
 firehol
 *.json
 *.txt
+*.pyc
